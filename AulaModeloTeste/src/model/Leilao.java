@@ -2,16 +2,22 @@ package model;
 
 import java.util.Calendar;
 import java.util.List;
+import java.util.ArrayList;
 
 public class Leilao {
 	
 	private String nome;
-	private Double valorInicial;
+	private Double valorInicial = 0.0;
 	private Usuario usuario;
 	private Calendar dataAbertura;
 	private boolean usado;
 	
 	private List<Lance> lances;
+
+	public Leilao(String nome) {
+		this.nome = nome;
+		lances = new ArrayList<Lance>();
+	}
 
 	public void setDataAbertura(Calendar dataAbertura) {
 		this.dataAbertura = dataAbertura;
@@ -61,5 +67,8 @@ public class Leilao {
 		this.lances = lances;
 	}
 
+	public void propoe(Lance lance) {
+		lances.add(lance);		
+	}
 
 }
