@@ -66,4 +66,47 @@ public class AvaliadorTest {
 				
 		
 	}
+	@Test
+	public void testaBuscarMenorLanceSemOrdem() {
+		//Entradas > criar os lances e o resultado esperado
+		Lance lance1 = new Lance(usuario1, 300);
+		Lance lance3 = new Lance(usuario3, 250);
+		Lance lance2 = new Lance(usuario2, 400);
+		leilao.propoe(lance1);
+		leilao.propoe(lance2);
+		leilao.propoe(lance3);
+		
+		
+		double resultadoEsperado = 250.00;
+		
+		//execução
+		avaliador.avalia(leilao); 
+		double resultadoObtido = avaliador.getMenorLance();
+		
+		//comparação
+		Assertions.assertEquals(resultadoEsperado, resultadoObtido, 0.0001);				
+		
+	}
+	@Test
+	public void testaBuscarMaiorLanceOrdemCrescente() {
+		//Entradas > criar os lances e o resultado esperado
+		Lance lance1 = new Lance(usuario1, 300);
+		Lance lance3 = new Lance(usuario3, 250);
+		Lance lance2 = new Lance(usuario2, 400);
+		leilao.propoe(lance3);
+		leilao.propoe(lance1);
+		leilao.propoe(lance2);
+		
+		
+		double resultadoEsperado = 250.00;
+		
+		//execução
+		avaliador.avalia(leilao); 
+		double resultadoObtido = avaliador.getMenorLance();
+		
+		//comparação
+		Assertions.assertEquals(resultadoEsperado, resultadoObtido, 0.0001);
+				
+		
+	}
 }
