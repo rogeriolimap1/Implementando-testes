@@ -131,9 +131,7 @@ public class AvaliadorTest {
 	@Test
 	public void testaBuscarApenasUmLance() {
 		//Entradas > criar os lances e o resultado esperado
-		Lance lance1 = new Lance(usuario1, 300);
 		Lance lance3 = new Lance(usuario3, 250);
-		Lance lance2 = new Lance(usuario2, 400);
 		leilao.propoe(lance3);
 		
 		
