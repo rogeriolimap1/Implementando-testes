@@ -186,5 +186,4 @@ public class AvaliadorTest {
 		//comparação
 		assertEquals(resultadoEsperado, resultadoObtido, 0.0001);
 	}
-	
 }
